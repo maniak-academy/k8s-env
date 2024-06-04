@@ -1,0 +1,22 @@
+## Настройки longhorn
+longhorn:
+  defaultSettings:
+## директория для хранения данных на хосте
+    defaultDataPath: /longhorn
+## планирование реплик на узлах с существующими исправными репликами того же тома.
+    replicaSoftAntiAffinity: true
+## автоматическая балансировка реплик при обнаружении доступного узла
+    replicaAutoBalance: best-effort
+  ingress:
+## включение ingress для Longhorn UI
+    enabled: false
+    ingressClassName: ~
+## домен (FQDN), по которому будет доступен Longhorn UI
+    host: example.ru
+## включение шифрования
+    tls: false
+    tlsSecret: elma365-onpremise-tls
+  csi:
+## корневой каталог kubelet
+    kubeletRootDir: /var/lib/kubelet
+
